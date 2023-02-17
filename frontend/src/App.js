@@ -3,6 +3,7 @@ import PostPage from "./pages/PostPage";
 import LoginPage from "./pages/LoginPage";
 import MainPage from "./pages/MainPage";
 import SignUp from "./pages/SignUp";
+import Grading from "./pages/Grading";
 import "./App.css";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
             <Route path="/post/:id" element={<PostPage />}></Route>
             <Route path="/login" element={<LoginPage />}></Route>
             <Route path="/signup" element={<SignUp />}></Route>
+            <Route path="/grade/:id" element={<Grading />}></Route>
             <Route path="/" element={<MainPage />}></Route>
           </Routes>
         </div>
