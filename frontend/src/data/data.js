@@ -6,8 +6,13 @@ export const userData = [
   },
   {
     uid: 1, // user uid
-    username: "노자",
+    username: "dora",
     password: "noja",
+  },
+  {
+    uid: 2, // user uid
+    username: "오리너구리",
+    password: "platypus",
   },
 ];
 
@@ -18,9 +23,9 @@ export const postData = [
     createdDate: "2022-01-30T10:03:47.564Z",
     modifiedDate: "2022-01-30T10:03:47.564Z",
     writer: 0, // user uid
-    title: "Title",
-    content: "Example content that is short",
-    images: ["imageurl1", "imageurl2", "imageurl3", "imageurl4"], // image url list or image uid list
+    title: "자랑글! 헿 (+추가)",
+    content: "개인 수영장 샀당",
+    images: ["swimmingpool.jpg"], // image url list or image uid list
   },
   {
     uid: 1, // post uid
@@ -28,9 +33,9 @@ export const postData = [
     createdDate: "2022-01-29T10:03:47.564Z",
     modifiedDate: "2022-01-29T10:03:47.564Z",
     writer: 1, // user uid
-    title: "Title",
-    content: "Example content that is short",
-    images: ["imageurl1", "imageurl2", "imageurl3", "imageurl4"], // image url list or image uid list
+    title: "도라는 귀여워",
+    content: "도라는 너무너무 귀여워",
+    images: ["dora1.jpg", "dora2.jpg"], // image url list or image uid list
   },
 ];
 
@@ -40,51 +45,46 @@ export const commentData = [
     post: 0, // post uid
     createdDate: "2022-01-29T10:03:47.564Z",
     modifiedDate: "2022-01-29T10:03:47.564Z",
-    writer: 0, // user uid
+    writer: 1, // user uid
     isBonus: true,
-    content: "Example comment",
+    content: "너무 부러워요~",
   },
   {
     uid: 1, // comment uid
-    post: 1, // post uid
+    post: 0, // post uid
     createdDate: "2022-01-29T10:03:47.564Z",
     modifiedDate: "2022-01-29T10:03:47.564Z",
-    writer: 0, // user uid
+    writer: 2, // user uid
     isBonus: true,
-    content: "Example comment",
+    content: "헤엄치고 싶군",
   },
   {
     uid: 2, // comment uid
-    post: 0, // post uid
+    post: 1, // post uid
     createdDate: "2022-01-30T10:03:47.564Z",
     modifiedDate: "2022-01-30T10:03:47.564Z",
-    writer: 0, // user uid
+    writer: 2, // user uid
     isBonus: true,
-    content: "Example comment",
+    content: "나도 도라 줘",
   },
 ];
 
 export const quizData = [
   {
     uid: 0, // quiz uid
-    post: 0, // post uid
+    post: 1, // post uid
     isActive: true,
     lastModified: "2022-01-29T10:03:47.564Z",
     quiz: [
       {
-        question: "question",
-        choices: ["answer1", "answer2"],
-        answer: 0,
+        question: "도라는 무슨 종인가요?",
+        choices: ["말티즈", "비숑", "꼬똥", "잡종"],
+        answer: 2,
       },
       {
-        question: "question",
-        choices: ["answer1", "answer2"],
-        answer: 0,
-      },
-      {
-        question: "question",
-        choices: ["answer1", "answer2"],
-        answer: 0,
+        question: "도라 생일은 언제인가요?",
+        choices: ["1/16", "6/10", "12/25"],
+        answer: 1,
       },
     ],
   },
