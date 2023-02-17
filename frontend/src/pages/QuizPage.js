@@ -48,7 +48,12 @@ export default function QuizPage() {
   return (
     <div
       className="background-image4"
-      style={{ height: "100%", width: "100%", backgroundSize: "cover" }}
+      style={{
+        minHeight: "100vh",
+        height: "100%",
+        width: "100%",
+        backgroundSize: "cover",
+      }}
     >
       <Header />
       <PaddingStack>
@@ -77,7 +82,7 @@ export default function QuizPage() {
                 />
               </StackItem>
             ))}
-            <StackItem marginAfter={100}>
+            <StackItem>
               <Link to={`/grade/${routeParams.id}`}>
                 <Button text="제출하기" />
               </Link>

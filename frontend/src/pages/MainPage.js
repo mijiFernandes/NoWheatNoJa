@@ -13,6 +13,7 @@ export default function MainPage() {
     <div
       className="background-image4"
       style={{
+        minHeight: "100vh",
         height: "100%",
         width: "100%",
         backgroundSize: "cover",
