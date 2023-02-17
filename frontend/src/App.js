@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import CreatePage from "./pages/CreatePage";
 import PostPage from "./pages/PostPage";
+import UserPage from "./pages/UserPage";
 import LoginPage from "./pages/LoginPage";
 import MainPage from "./pages/MainPage";
 import SignUp from "./pages/SignUp";
@@ -16,6 +17,7 @@ function App() {
           <Routes>
             <Route path="/post/:id/quiz" element={<QuizPage />}></Route>
             <Route path="/post/:id" element={<PostPage />}></Route>
+            <Route path="/user/:id" element={<UserPage />}></Route>
             <Route path="/login" element={<LoginPage />}></Route>
             <Route path="/signup" element={<SignUp />}></Route>
             <Route path="/create" element={<CreatePage />}></Route>

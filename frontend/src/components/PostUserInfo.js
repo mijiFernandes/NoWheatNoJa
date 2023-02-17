@@ -19,7 +19,13 @@ export default function PostUserInfo({ userId }) {
 
   if (!user) return <></>;
   return (
-    <HStack justify="start" align="center" spacing={8}>
+    <HStack
+      justify="start"
+      align="center"
+      spacing={8}
+      onClick={() => (window.location.href = `/user/${userId}`)}
+      className="user-info-avatar"
+    >
       <StackItem>
         <Avatar
           avatarUrl="https://cf.channel.io/thumb/200x200/pub-file/1/606d87d059a6093594c0/ch-symbol-filled-smiley-bg.png"

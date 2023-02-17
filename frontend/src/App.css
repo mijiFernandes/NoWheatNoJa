@@ -58,7 +58,8 @@
   background-image: url("http://localhost:3000/5.jpeg");
 }
 
-.header-logo:hover {
+.header-logo:hover,
+.user-info-avatar:hover {
   cursor: pointer;
 }
 
