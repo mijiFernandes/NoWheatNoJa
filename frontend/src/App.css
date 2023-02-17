@@ -44,6 +44,16 @@
   }
 }
 
+.background-image1 {
+  background-image: url("http://localhost:3000/1.jpeg");
+}
+.background-image2 {
+  background-image: url("http://localhost:3000/2.jpeg");
+}
+.background-image3 {
+  background-image: url("http://localhost:3000/3.jpeg");
+}
+
 .background-image {
   background-image: url("http://localhost:3000/5.jpeg");
 }
