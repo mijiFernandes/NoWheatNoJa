@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import CreatePage from "./pages/CreatePage";
 import PostPage from "./pages/PostPage";
 import LoginPage from "./pages/LoginPage";
 import MainPage from "./pages/MainPage";
@@ -16,6 +17,7 @@ function App() {
             <Route path="/post/:id" element={<PostPage />}></Route>
             <Route path="/login" element={<LoginPage />}></Route>
             <Route path="/signup" element={<SignUp />}></Route>
+            <Route path="/create" element={<CreatePage />}></Route>
             <Route path="/" element={<MainPage />}></Route>
           </Routes>
         </div>
