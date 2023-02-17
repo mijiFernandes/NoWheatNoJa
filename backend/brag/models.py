@@ -1,7 +1,7 @@
 from django.db import models
 from hashids import Hashids
 
-from ..account.models import User
+from account.models import User
 
 hashids = Hashids(salt="happyHacking", min_length=10)
 
@@ -17,23 +17,16 @@ class Post(models.Model):
     title = models.CharField(max_length=200)
     content = models.TextField()
 
-    images = models.ManyToManyField(PostImage)
+    images = models.ManyToManyField(PostImage,  blank=True)
 
     """
-    quiz : {
-		lastModified: timestamp
-		qcount: int
-		questions: [
-			{
-				q: text
-				a: [ List of Text ]
-				answer: int
-			} 
-		]
-	}
+    quiz : [ {
+		question: Text
+        choices: Text (including seperator ';')
+        answer: int
+	} ]
     """
-    # fixme: questions containing answer
-    quiz = models.TextField() # stringified json
+    quiz = models.TextField()
 
     # 나눔이 진행되는 중인가?
     isActive = models.BooleanField()
@@ -56,7 +49,6 @@ class Comment(models.Model):
     writer = models.ForeignKey(User, on_delete=models.CASCADE)
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
 
-    isBonus = models.BooleanField()
     content = models.CharField(max_length=500)
 
     def __str__(self) -> str:
@@ -68,18 +60,13 @@ class Result(models.Model):
 
     quizSolved = models.DateTimeField(auto_now_add=True)
     
-    # stringified json content
-    # list of integers
-    submissions = models.TextField()
+    # string of integers sep=';'
+    choices = models.CharField(max_length=10)
 
     # 0 to 32767
     quizScore = models.PositiveSmallIntegerField()
 
-    bonusComment = models.ForeignKey(Comment, on_delete=models.SET_NULL)
-    bonusScore = models.PositiveSmallIntegerField()
-    bonusScoreChecked = models.DateTimeField(auto_now=True)
-
-    totalScore = models.PositiveSmallIntegerField()
+    isChosen = models.BooleanField()
 
     def __str__(self) -> str:
         return f'Result:{self.viewer}||{self.post}'
