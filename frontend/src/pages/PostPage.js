@@ -69,7 +69,12 @@ export default function PostPage() {
     return (
       <div
         className="background-image4"
-        style={{ height: "100%", width: "100%", backgroundSize: "cover" }}
+        style={{
+          minHeight: "100vh",
+          height: "100%",
+          width: "100%",
+          backgroundSize: "cover",
+        }}
       >
         <Header />
         <div style={{ padding: "16px" }}>
