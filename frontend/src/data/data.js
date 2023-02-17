@@ -36,7 +36,7 @@ export const postData = [
     title: "도라는 귀여워",
     content:
       "도라는 너무너무 귀여워 코랑 발이 새까맣구 프랑스어로 솜뭉치를 뜻하는 꼬똥이라는 종이야 2015년 6월 10일 생인데 너무 동안이라 산책 나갈 때마다 사람들이 몇 개월이냐고 물어봐 껴안고 자면 따뜻하고 가끔 말을 안 들어도 귀여워서 간식을 아무때나 막 주곤 해 너무너무 부럽지? 도라도라도라도라 귀여워",
-    images: ["dora1.jpg", "dora2.jpg"], // image url list or image uid list
+    images: ["dora1.jpg", "dora2.jpg", "dora3.jpg"], // image url list or image uid list
   },
 ];
 
