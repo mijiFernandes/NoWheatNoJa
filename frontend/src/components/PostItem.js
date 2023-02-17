@@ -1,29 +1,23 @@
 import React from "react";
-import { StackItem, Text, Typography, VStack } from "@channel.io/bezier-react";
-import PostUserInfo from "./PostUserInfo";
+import { styled, VStack } from "@channel.io/bezier-react";
+import PostContent from "./PostContent";
+
+const PaddingStack = styled(VStack)`
+  box-sizing: border-box;
+  padding: 16px;
+`;
 
 export default function PostItem({ post }) {
-  function truncatedText(text, maxLen) {
-    const len = text.length;
-    if (len >= maxLen) return text.slice(0, maxLen) + " ...";
-    return text;
-  }
-
   return (
-    <VStack
+    <PaddingStack
       justify="start"
       align="stretch"
       spacing={16}
       className="post-item"
       onClick={() => (window.location.href = `/post/${post.uid}`)}
+      style={{backgroundColor: "white"}}
     >
-      <StackItem>
-        <PostUserInfo userId={post.writer} />
-      </StackItem>
-
-      <StackItem>
-        <Text typo={Typography.Size18}>{truncatedText(post.content, 300)}</Text>
-      </StackItem>
-    </VStack>
+      <PostContent post={post} />
+    </PaddingStack>
   );
 }

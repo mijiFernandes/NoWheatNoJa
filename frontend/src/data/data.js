@@ -1,8 +1,13 @@
 export const userData = [
   {
     uid: 0, // user uid
-    username: "username",
-    password: "password",
+    username: "노휫",
+    password: "nowheat",
+  },
+  {
+    uid: 1, // user uid
+    username: "노자",
+    password: "noja",
   },
 ];
 
@@ -10,9 +15,19 @@ export const postData = [
   {
     uid: 0, // post uid
     hashid: 0, // post hash id
+    createdDate: "2022-01-30T10:03:47.564Z",
+    modifiedDate: "2022-01-30T10:03:47.564Z",
+    writer: 0, // user uid
+    title: "Title",
+    content: "Example content that is short",
+    images: ["imageurl1", "imageurl2", "imageurl3", "imageurl4"], // image url list or image uid list
+  },
+  {
+    uid: 1, // post uid
+    hashid: 1, // post hash id
     createdDate: "2022-01-29T10:03:47.564Z",
     modifiedDate: "2022-01-29T10:03:47.564Z",
-    writer: 0, // user uid
+    writer: 1, // user uid
     title: "Title",
     content: "Example content that is short",
     images: ["imageurl1", "imageurl2", "imageurl3", "imageurl4"], // image url list or image uid list
@@ -41,8 +56,8 @@ export const commentData = [
   {
     uid: 2, // comment uid
     post: 0, // post uid
-    createdDate: "2022-01-29T10:03:47.564Z",
-    modifiedDate: "2022-01-29T10:03:47.564Z",
+    createdDate: "2022-01-30T10:03:47.564Z",
+    modifiedDate: "2022-01-30T10:03:47.564Z",
     writer: 0, // user uid
     isBonus: true,
     content: "Example comment",
@@ -55,10 +70,23 @@ export const quizData = [
     post: 0, // post uid
     isActive: true,
     lastModified: "2022-01-29T10:03:47.564Z",
-    title: "question",
-    content: "content",
-    candidates: ["answer1", "answer2"],
-    answer: 0,
+    quiz: [
+      {
+        question: "question",
+        choices: ["answer1", "answer2"],
+        answer: 0,
+      },
+      {
+        question: "question",
+        choices: ["answer1", "answer2"],
+        answer: 0,
+      },
+      {
+        question: "question",
+        choices: ["answer1", "answer2"],
+        answer: 0,
+      },
+    ],
   },
 ];
 

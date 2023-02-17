@@ -44,6 +44,27 @@
   }
 }
 
-.background-image {
+.background-image1 {
+  background-image: url("http://localhost:3000/1.jpeg");
+}
+.background-image2 {
+  background-image: url("http://localhost:3000/2.jpeg");
+}
+.background-image3 {
+  background-image: url("http://localhost:3000/3.jpeg");
+}
+.background-image4 {
+  background-image: url("http://localhost:3000/4.jpeg");
+}
+.background-image5 {
   background-image: url("http://localhost:3000/5.jpeg");
+}
+
+.header-logo:hover,
+.user-info-avatar:hover {
+  cursor: pointer;
+}
+
+:root {
+  --gray: #c3c3c3;
 }

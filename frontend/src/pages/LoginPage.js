@@ -1,76 +1,80 @@
-import React from "react";
-import { createRoot } from 'react-dom/client';
-import { BezierProvider, LightFoundation, Text } from '@channel.io/bezier-react';
-import { TextField } from '@channel.io/bezier-react';
-import { VStack } from '@channel.io/bezier-react';
-import { StackItem } from '@channel.io/bezier-react';
-import { Button } from '@channel.io/bezier-react';
-import { ButtonColorVariant } from '@channel.io/bezier-react';
-import { ButtonStyleVariant } from '@channel.io/bezier-react';
-import { HStack } from '@channel.io/bezier-react';
+import React, { useState } from "react";
+import { createRoot } from "react-dom/client";
+import { TextField } from "@channel.io/bezier-react";
+import { VStack } from "@channel.io/bezier-react";
+import { StackItem } from "@channel.io/bezier-react";
+import { Button } from "@channel.io/bezier-react";
+import { ButtonColorVariant } from "@channel.io/bezier-react";
+import { ButtonStyleVariant } from "@channel.io/bezier-react";
+import { HStack } from "@channel.io/bezier-react";
 import { Link } from "react-router-dom";
 
 export default function LoginPage() {
-  const container = document.getElementById('root')
-  const root = createRoot(container)
+  const [textID, setTextID] = useState("");
+  function onchangeID(e) {
+    setTextID(e.target.value);
+    console.log(e.target.value);
+  }
+  const [textPW, setTextPW] = useState("");
+  function onchangePW(e) {
+    setTextPW(e.target.value);
+    console.log(e.target.value);
+  }
 
   return (
-    <div className="background-image" style={{ height: '100vh', width: '100vw' }}>
+    <div
+      className="background-image1"
+      style={{ height: "100vh", width: "100vw", backgroundSize: "cover" }}
+    >
       <VStack align="center" justify="center">
-        <StackItem
-          size={50}
-        >
+        <StackItem size={50}>
           <TextField
             allowClear
             autoFocus
             maxLength={25}
-            onChange={function noRefCheck(){}}
+            value={textID}
+            onChange={(e) => onchangeID(e)}
             placeholder="Please write down your Email"
             size={36}
             variant={0}
           />
         </StackItem>
-        <StackItem
-          size={50}
-          style={{ width: '300px'}}
-        >
+        <StackItem size={50} style={{ width: "300px" }}>
           <TextField
             allowClear
             autoFocus
             maxLength={20}
-            onChange={function noRefCheck(){}}
+            value={textPW}
+            onChange={(e) => onchangePW(e)}
             placeholder="Please write down your PW"
             size={36}
             variant={0}
           />
         </StackItem>
-        <StackItem
-          size={50}
-        >
-          <HStack spacing={50}>
-            <StackItem
-            >
-              <Button
-                text="Log-in"
-                colorVariant={ButtonColorVariant.Green}
-                styleVariant={ButtonStyleVariant.Primary}
-            />
-            </StackItem>
-            <StackItem
-              size={100}
-            >
-              <Link to="/signup">
+        <StackItem size={50}>
+          <HStack spacing={60}>
+            <StackItem>
+              <Link to="/">
                 <Button
-                  text="Sign-Up"
+                  text="Log in"
                   colorVariant={ButtonColorVariant.Green}
                   styleVariant={ButtonStyleVariant.Primary}
                 />
               </Link>
             </StackItem>
-        </HStack>
-      </StackItem>
+            <StackItem size={120}>
+              <Link to="/signup">
+                <Button
+                  rightContent="arrow-right"
+                  text="Sign Up"
+                  colorVariant={ButtonColorVariant.Green}
+                  styleVariant={ButtonStyleVariant.Primary}
+                />
+              </Link>
+            </StackItem>
+          </HStack>
+        </StackItem>
       </VStack>
     </div>
   );
 }
-
