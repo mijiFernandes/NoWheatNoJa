@@ -15,6 +15,7 @@ export default function PostItem({ post }) {
       spacing={16}
       className="post-item"
       onClick={() => (window.location.href = `/post/${post.uid}`)}
+      style={{backgroundColor: "white"}}
     >
       <PostContent post={post} />
     </PaddingStack>

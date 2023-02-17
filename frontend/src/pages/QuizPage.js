@@ -13,6 +13,7 @@ import {
 import { postData, quizData } from "../data/data";
 import { useParams } from "react-router-dom";
 import QuizItem from "../components/QuizItem";
+import { Link } from "react-router-dom";
 
 const PaddingStack = styled(VStack)`
   box-sizing: border-box;
@@ -45,7 +46,7 @@ export default function QuizPage() {
 
   if (!post || !quizzes) return <></>;
   return (
-    <>
+    <div className="background-image4" style={{ positoin: 'absolute', height: '100%', width: '100%', backgroundSize: 'cover'}}>
       <Header />
       <PaddingStack>
         <StackItem>
@@ -73,12 +74,15 @@ export default function QuizPage() {
                 />
               </StackItem>
             ))}
-            <StackItem>
+            <StackItem
+            marginAfter={100}>
+              <Link to={`/grade/${routeParams.id}`}>
               <Button text="제출하기" />
+              </Link>
             </StackItem>
           </VStack>
         </StackItem>
       </PaddingStack>
-    </>
+    </div>
   );
 }
