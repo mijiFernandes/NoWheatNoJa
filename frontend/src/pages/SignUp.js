@@ -87,9 +87,5 @@ export default function SignUp() {
         </StackItem>
       </VStack>
     </div>
-
-
-
-
   );
 }
