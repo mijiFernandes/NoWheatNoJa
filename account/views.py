@@ -2,6 +2,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 from .forms import NewUserForm
+from .models import User
 
 @csrf_exempt
 def signin_view(request):
@@ -25,15 +26,26 @@ def signout_view(request):
 def signup_view(request):
 
     if request.method == "POST":
-        form = NewUserForm(request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=raw_password)
-            login(request, user)
-            return render(request, 'signin.html')
-    else:
-        form = NewUserForm()
 
-    return render(request, template_name="register.html", context={"register_form": form})
+        username = request.POST['username']
+        password = request.POST['password1']
+
+        User.objects.create_user(username=username, password=password)
+
+        user = authenticate(username=username, password=password)
+        login(request, user)
+
+        return render(request, 'signin.html')
+
+    #     form = NewUserForm(request.POST)
+    #     if form.is_valid():
+    #         form.save()
+    #         username = form.cleaned_data.get('username')
+    #         raw_password = form.cleaned_data.get('password1')
+    #         user = authenticate(username=username, password=raw_password)
+    #         login(request, user)
+    #         return render(request, 'signin.html')
+    # else:
+    #     form = NewUserForm()
+
+    return render(request, template_name="register.html")

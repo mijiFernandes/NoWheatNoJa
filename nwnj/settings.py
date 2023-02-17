@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'brag',
-    'account',
+    'brag.apps.BragConfig',
+    'account.apps.AccountConfig',
 ]
 
 MIDDLEWARE = [
