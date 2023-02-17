@@ -10,7 +10,7 @@ import PostUserInfo from "../components/PostUserInfo";
 
 export default function PostContent({ post }) {
   return (
-    <VStack spacing={16}>
+    <VStack spacing={16} >
       <StackItem>
         <PostUserInfo userId={post.writer} />
       </StackItem>

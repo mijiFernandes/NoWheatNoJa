@@ -53,8 +53,10 @@
 .background-image3 {
   background-image: url("http://localhost:3000/3.jpeg");
 }
-
-.background-image {
+.background-image4 {
+  background-image: url("http://localhost:3000/4.jpeg");
+}
+.background-image5 {
   background-image: url("http://localhost:3000/5.jpeg");
 }
 

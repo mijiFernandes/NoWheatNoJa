@@ -19,7 +19,8 @@ import Header from "../components/Header";
 
 const PaddingStack = styled(VStack)`
   box-sizing: border-box;
-  padding: 32px;
+  padding: 16px;
+  border-radius: 16px;
 `;
 
 export default function PostPage() {
@@ -66,13 +67,15 @@ export default function PostPage() {
     );
   else
     return (
-      <>
+      <div className="background-image4" style={{ positoin: 'absolute', height: '100%', width: '100%', backgroundSize: 'cover'}}>
         <Header />
+        <div style={{ padding: "16px"}}>
         <PaddingStack
           justify="start"
           align="stretch"
           spacing={16}
           className="post-view"
+          style={{backgroundColor: "white"}}
         >
           <PostContent post={post} />
 
@@ -134,7 +137,7 @@ export default function PostPage() {
               ))}
             </VStack>
           </StackItem>
-        </PaddingStack>
-      </>
+        </PaddingStack></div>
+      </div>
     );
 }
