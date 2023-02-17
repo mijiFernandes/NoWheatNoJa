@@ -1,13 +1,13 @@
 .post-list {
-  padding: 16px;
+  padding: 32px;
 }
 
 .post-item {
-  border: solid 1px rgba(33, 33, 33, 0.2);
+  border: solid 1px var(--gray);
   border-radius: 16px;
 }
 
 .post-item:hover {
-  box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+  box-shadow: 0 0 11px var(--gray);
   cursor: pointer;
 }

@@ -47,3 +47,11 @@
 .background-image {
   background-image: url("http://localhost:3000/5.jpeg");
 }
+
+.header-logo:hover {
+  cursor: pointer;
+}
+
+:root {
+  --gray: #c3c3c3;
+}
