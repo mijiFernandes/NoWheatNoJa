@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
-from .forms import NewUserForm
+from django.http import HttpResponse, JsonResponse
 from .models import User
 
 @csrf_exempt
@@ -15,7 +15,22 @@ def signin_view(request):
         if user is not None:
             login(request, user)
 
+            json_string = {
+                "uid": user.id,
+                "username": user.username,
+                "password": user.password,
+            }
+        else:
+            json_string = {
+                "uid": None,
+                "username": None,
+                "password": None,
+            }
+
+
     return render(request, 'signin.html')
+
+    # return JsonResponse(json_string)
 
 
 def signout_view(request):
@@ -28,24 +43,19 @@ def signup_view(request):
     if request.method == "POST":
 
         username = request.POST['username']
-        password = request.POST['password1']
+        password = request.POST['password']
 
         User.objects.create_user(username=username, password=password)
 
         user = authenticate(username=username, password=password)
         login(request, user)
 
-        return render(request, 'signin.html')
+        json_string = {
+            "uid": user.id,
+            "username": user.username,
+            "password": user.password,
+        }
 
-    #     form = NewUserForm(request.POST)
-    #     if form.is_valid():
-    #         form.save()
-    #         username = form.cleaned_data.get('username')
-    #         raw_password = form.cleaned_data.get('password1')
-    #         user = authenticate(username=username, password=raw_password)
-    #         login(request, user)
-    #         return render(request, 'signin.html')
-    # else:
-    #     form = NewUserForm()
 
-    return render(request, template_name="register.html")
+        return JsonResponse(json_string)
+
