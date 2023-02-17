@@ -10,7 +10,7 @@ import PostUserInfo from "../components/PostUserInfo";
 
 export default function PostContent({ post }) {
   return (
-    <VStack spacing={16} >
+    <VStack spacing={16}>
       <StackItem>
         <PostUserInfo userId={post.writer} />
       </StackItem>
@@ -37,13 +37,14 @@ export default function PostContent({ post }) {
           >
             {post.images.map((image) => (
               <StackItem>
-                <div
+                <img src={`/${image}`} width={250} height={250} />
+                {/* <div
                   style={{
                     width: 250,
                     height: 250,
                     border: "solid 1px var(--gray)",
                   }}
-                ></div>
+                ></div> */}
               </StackItem>
             ))}
           </HStack>
