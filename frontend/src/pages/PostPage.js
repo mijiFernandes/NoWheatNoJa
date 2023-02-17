@@ -67,20 +67,23 @@ export default function PostPage() {
     );
   else
     return (
-      <div className="background-image4" style={{ positoin: 'absolute', height: '100%', width: '100%', backgroundSize: 'cover'}}>
+      <div
+        className="background-image4"
+        style={{ height: "100%", width: "100%", backgroundSize: "cover" }}
+      >
         <Header />
-        <div style={{ padding: "16px"}}>
-        <PaddingStack
-          justify="start"
-          align="stretch"
-          spacing={16}
-          className="post-view"
-          style={{backgroundColor: "white"}}
-        >
-          <PostContent post={post} />
+        <div style={{ padding: "16px" }}>
+          <PaddingStack
+            justify="start"
+            align="stretch"
+            spacing={16}
+            className="post-view"
+            style={{ backgroundColor: "white" }}
+          >
+            <PostContent post={post} />
 
-          <StackItem>
-            {/* <HStack justify="start" align="stretch" spacing={16}>
+            <StackItem>
+              {/* <HStack justify="start" align="stretch" spacing={16}>
                 <StackItem grow shrink weight={1}>
                   <TextField placeholder="댓글을 입력해주세요" />
                 </StackItem>
@@ -92,52 +95,55 @@ export default function PostPage() {
                   />
                 </StackItem>
               </HStack> */}
-            <HStack align="center" spacing={16}>
-              <StackItem size={100}>
-                <Text typo={Typography.Size12}>
-                  문제 푼 사람: {quizResultNum()}명
-                </Text>
-              </StackItem>
-              <StackItem grow shrink weight={1}>
-                <Text typo={Typography.Size12}>댓글: {comments.length}개</Text>
-              </StackItem>
-              <StackItem>
-                <Link to={`/post/${routeParams.id}/quiz`}>
-                  <Button
-                    text="문제 풀으러 가기"
-                    rightContent="arrow-right"
-                    colorVariant={ButtonColorVariant.Blue}
-                    styleVariant={ButtonStyleVariant.Primary}
-                  />
-                </Link>
-              </StackItem>
-            </HStack>
-          </StackItem>
-
-          <StackItem>
-            <VStack justify="start" align="stretch" spacing={16}>
-              {comments.map((comment, id) => (
-                <StackItem>
-                  <VStack spacing={16}>
-                    {id > 0 ? (
-                      <StackItem>
-                        <Divider />
-                      </StackItem>
-                    ) : (
-                      <></>
-                    )}
-                    <StackItem>
-                      <PostUserInfo userId={comment.writer} />
-                    </StackItem>
-                    <StackItem>
-                      <Text typo={Typography.Size14}>{comment.content}</Text>
-                    </StackItem>
-                  </VStack>
+              <HStack align="center" spacing={16}>
+                <StackItem size={100}>
+                  <Text typo={Typography.Size12}>
+                    문제 푼 사람: {quizResultNum()}명
+                  </Text>
                 </StackItem>
-              ))}
-            </VStack>
-          </StackItem>
-        </PaddingStack></div>
+                <StackItem grow shrink weight={1}>
+                  <Text typo={Typography.Size12}>
+                    댓글: {comments.length}개
+                  </Text>
+                </StackItem>
+                <StackItem>
+                  <Link to={`/post/${routeParams.id}/quiz`}>
+                    <Button
+                      text="문제 풀으러 가기"
+                      rightContent="arrow-right"
+                      colorVariant={ButtonColorVariant.Blue}
+                      styleVariant={ButtonStyleVariant.Primary}
+                    />
+                  </Link>
+                </StackItem>
+              </HStack>
+            </StackItem>
+
+            <StackItem>
+              <VStack justify="start" align="stretch" spacing={16}>
+                {comments.map((comment, id) => (
+                  <StackItem>
+                    <VStack spacing={16}>
+                      {id > 0 ? (
+                        <StackItem>
+                          <Divider />
+                        </StackItem>
+                      ) : (
+                        <></>
+                      )}
+                      <StackItem>
+                        <PostUserInfo userId={comment.writer} />
+                      </StackItem>
+                      <StackItem>
+                        <Text typo={Typography.Size14}>{comment.content}</Text>
+                      </StackItem>
+                    </VStack>
+                  </StackItem>
+                ))}
+              </VStack>
+            </StackItem>
+          </PaddingStack>
+        </div>
       </div>
     );
 }

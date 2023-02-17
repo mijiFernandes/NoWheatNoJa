@@ -48,7 +48,14 @@ export default function UserPage() {
     );
   else
     return (
-      <>
+      <div
+        className="background-image4"
+        style={{
+          height: "100%",
+          width: "100%",
+          backgroundSize: "cover",
+        }}
+      >
         <Header />
         <div style={{ paddingTop: "32px" }}>
           <Text bold typo={Typography.Size18} marginAll={32}>
@@ -56,6 +63,6 @@ export default function UserPage() {
           </Text>
         </div>
         <PostList posts={posts} />
-      </>
+      </div>
     );
 }

@@ -1,36 +1,33 @@
 import React, { useState } from "react";
-import { createRoot } from 'react-dom/client';
-import { BezierProvider, LightFoundation, Text } from '@channel.io/bezier-react';
-import { TextField } from '@channel.io/bezier-react';
-import { VStack } from '@channel.io/bezier-react';
-import { StackItem } from '@channel.io/bezier-react';
-import { Button } from '@channel.io/bezier-react';
-import { ButtonColorVariant } from '@channel.io/bezier-react';
-import { ButtonStyleVariant } from '@channel.io/bezier-react';
-import { HStack } from '@channel.io/bezier-react';
+import { createRoot } from "react-dom/client";
+import { TextField } from "@channel.io/bezier-react";
+import { VStack } from "@channel.io/bezier-react";
+import { StackItem } from "@channel.io/bezier-react";
+import { Button } from "@channel.io/bezier-react";
+import { ButtonColorVariant } from "@channel.io/bezier-react";
+import { ButtonStyleVariant } from "@channel.io/bezier-react";
+import { HStack } from "@channel.io/bezier-react";
 import { Link } from "react-router-dom";
 
 export default function LoginPage() {
-  const container = document.getElementById('root')
-  const root = createRoot(container)
-  const [textID, setTextID] = useState('');
+  const [textID, setTextID] = useState("");
   function onchangeID(e) {
-      setTextID(e.target.value);
-      console.log(e.target.value)
-    };
-  const [textPW, setTextPW] = useState('');
+    setTextID(e.target.value);
+    console.log(e.target.value);
+  }
+  const [textPW, setTextPW] = useState("");
   function onchangePW(e) {
     setTextPW(e.target.value);
-    console.log(e.target.value)
-  };
+    console.log(e.target.value);
+  }
 
-  
   return (
-    <div className="background-image1" style={{ height: '100vh', width: '100vw', backgroundSize: 'cover'  }}>
+    <div
+      className="background-image1"
+      style={{ height: "100vh", width: "100vw", backgroundSize: "cover" }}
+    >
       <VStack align="center" justify="center">
-        <StackItem
-          size={50}
-        >
+        <StackItem size={50}>
           <TextField
             allowClear
             autoFocus
@@ -42,10 +39,7 @@ export default function LoginPage() {
             variant={0}
           />
         </StackItem>
-        <StackItem
-          size={50}
-          style={{ width: '300px'}}
-        >
+        <StackItem size={50} style={{ width: "300px" }}>
           <TextField
             allowClear
             autoFocus
@@ -57,23 +51,18 @@ export default function LoginPage() {
             variant={0}
           />
         </StackItem>
-        <StackItem
-          size={50}
-        >
+        <StackItem size={50}>
           <HStack spacing={60}>
-            <StackItem
-            >
+            <StackItem>
               <Link to="/">
-              <Button
-                text="Log in"
-                colorVariant={ButtonColorVariant.Green}
-                styleVariant={ButtonStyleVariant.Primary}
-            />
-            </Link>
+                <Button
+                  text="Log in"
+                  colorVariant={ButtonColorVariant.Green}
+                  styleVariant={ButtonStyleVariant.Primary}
+                />
+              </Link>
             </StackItem>
-            <StackItem
-              size={120}
-            >
+            <StackItem size={120}>
               <Link to="/signup">
                 <Button
                   rightContent="arrow-right"
@@ -83,10 +72,9 @@ export default function LoginPage() {
                 />
               </Link>
             </StackItem>
-        </HStack>
-      </StackItem>
+          </HStack>
+        </StackItem>
       </VStack>
     </div>
   );
 }
-

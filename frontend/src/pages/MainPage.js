@@ -10,8 +10,14 @@ export default function MainPage() {
   );
 
   return (
-    
-    <div className="background-image4" style={{ positoin: 'absolute', height: '100%', width: '100%', backgroundSize: 'cover'}}>
+    <div
+      className="background-image4"
+      style={{
+        height: "100%",
+        width: "100%",
+        backgroundSize: "cover",
+      }}
+    >
       <Header />
       <PostList posts={posts} />
     </div>
